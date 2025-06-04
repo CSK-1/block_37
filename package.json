@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "imports": {
-    "#db/client": "./db/client.js"
+    "#db/client": "./db/client.js",
+    "#app": "./app.js"
   },
 "scripts": {
 		"db:schema": "psql -d recipes -f db/schema.sql",

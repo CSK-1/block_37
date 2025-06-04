@@ -1,6 +1,6 @@
 import express from "express";
-import { getRecipes, getRecipe } from "#db/queries/recipes";
-import { createRecipe, deleteRecipe, updateRecipe } from "../db/queries/recipes";
+import { getRecipes, getRecipe } from "../db/queries/recipes.js";
+import { createRecipe, deleteRecipe, updateRecipe } from "../db/queries/recipes.js";
 const router = express.Router();
 export default router;
 

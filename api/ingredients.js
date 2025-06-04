@@ -1,5 +1,5 @@
 import express from "express";
-import { getIngredients, getIngredient } from "#db/queries/ingredients";
+import { getIngredients, getIngredient } from "../db/queries/ingredients.js";
 const router = express.Router();
 export default router;
 
