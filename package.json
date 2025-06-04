@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "imports": {
+    "#db/client": "./db/client.js"
+  },
 "scripts": {
 		"db:schema": "psql -d recipes -f db/schema.sql",
 		"db:seed": "node --env-file=.env db/seed.js",
