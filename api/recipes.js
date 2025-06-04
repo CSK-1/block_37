@@ -2,7 +2,8 @@ import express from "express";
 import { getRecipes, getRecipe } from "../db/queries/recipes.js";
 import { createRecipe, deleteRecipe, updateRecipe } from "../db/queries/recipes.js";
 const router = express.Router();
-export default router;
+router.use(express.json())
+
 
 function isValidId(id) {
 	const num = Number(id);
@@ -100,3 +101,5 @@ router.put("/:id", async (req, res) => {
 
 	res.send(updatedRecipe);
 });
+
+export default router;

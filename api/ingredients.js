@@ -2,6 +2,7 @@ import express from "express";
 import { getIngredients, getIngredient } from "../db/queries/ingredients.js";
 const router = express.Router();
 export default router;
+router.use(express.json())
 
 function isValidId(id) {
   const num = Number(id);
