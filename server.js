@@ -10,10 +10,6 @@ await db.connect();
 
 app.use(express.json());
 
-app.get('/', async(req,res,next) => {
-    console.log('it worked');
-    res.send('worked');
-})
 app.use("/ingredients", ingredientsRouter);
 
 app.use("/recipes", recipesRouter);
