@@ -27,3 +27,23 @@ export async function getRecipe(id) {
 	const { rows: recipe } = await db.query(sql, [id]);
 	return recipe[0];
 }
+
+export async function updateRecipe({ title, instructions, prep_time }) {
+    const sql = `
+      UPDATE recipes
+      SET title = $1, instructions = $2, prep_time = $3
+      WHERE id = $4
+      RETURNING *;
+    `;
+    const { rows: recipe } = await db.query(sql, [title, instructions, prep_time, id]);
+    return recipe[0];
+  }
+
+export async function deleteRecipe(id) {
+    const sql = `
+      DELETE FROM recipes WHERE id = $1
+      RETURNING *;
+    `;
+    const { rows: recipe } = await db.query(sql, [id]);
+    return recipe;
+  }
